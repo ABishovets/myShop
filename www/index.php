@@ -1,5 +1,6 @@
 <?php
     include_once '../config/config.php';// file where difined constants
+    include_once '../config/db.php';// file where difined db access
     include_once '../library/maineFunctions.php';//functions library file
 
     // определяем с каким контроллером будем работать

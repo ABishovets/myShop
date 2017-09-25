@@ -1,5 +1,9 @@
 <?php
+/**
+ * maine page controller
+ */
 
+include_once '../models/CategoriesModel.php'; //includ models
 
 function testAction()
     {
@@ -15,6 +19,8 @@ function testAction()
 
 function indexAction ($smarty)
     {
+        $reCategories = getAllMainCatsWithChildren();
+
         $smarty -> assign('pageTitle', 'Главная страница');
 
         loadTemplate ($smarty, 'header');
