@@ -45,20 +45,24 @@ function getAllMainCatsWithChildren($mysqli)
  */
 function getChildrenForCat ($par_id, $mysqli)
     {
+        $rs = $mysqli->query(' SELECT * FROM categories WHERE parent_id='.$par_id.' ; ');
 
 
-        $rs = $mysqli->query('
-            SELECT * FROM categories WHERE parent_id='.$par_id.' ;
-        ');
-
-        $rezult_array = [];
-
-        while ( $row = $rs->fetch_assoc() )
-        {
-            array_push($rezult_array,$row);
-        }
-
-
-        return $rezult_array;
+        return createSmartyRsArray($rs);
 
     }
+
+
+
+function getCatById ($id, $mysqli)
+{
+    $catId = intval($id);
+
+    $request = ' SELECT * FROM categories WHERE id = '.$catId ;
+
+    $rs = $mysqli->query($request);
+
+    return $rs->fetch_assoc();
+
+}
+

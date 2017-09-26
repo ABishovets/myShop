@@ -22,14 +22,6 @@ body {
   width: calc(100% - 300px);
   float: left;
   margin-left: 90px; }
-  #centerColumn .gird .product {
-    overflow: hidden;
-    padding: 10px;
-    margin: 10px;
-    width: 25%;
-    height: 300px;
-    background-color: #f0c040;
-    float: left; }
 
 #footer {
   clear: both; }
@@ -40,5 +32,14 @@ body {
 
 .cartbox {
   padding: 5px 0; }
+
+.gird .product {
+  overflow: hidden;
+  padding: 10px;
+  margin: 10px;
+  width: 25%;
+  height: 300px;
+  background-color: #f0c040;
+  float: left; }
 
 /*# sourceMappingURL=main.css.map */

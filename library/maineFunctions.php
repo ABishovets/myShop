@@ -26,16 +26,17 @@
 
 
 
+    function createSmartyRsArray($rs) {
 
+        $rezult_array = [];
 
+        while ( $row = $rs->fetch_assoc() )
+        {
+            array_push($rezult_array,$row);
+        }
 
-
-
-
-
-
-
-
+        return $rezult_array;
+    }
 
 
 

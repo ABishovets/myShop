@@ -17,7 +17,7 @@
 
 
     // function for load page
-    loadPage($smarty, $controllerName, $actionName,$mysqli);
+    loadPage($smarty, $controllerName, $actionName, $mysqli);
 
 
 

@@ -35,3 +35,18 @@ function getLastProducts ($limit = null, $mysqli)
     return $rezult_array;
 
 }
+
+
+
+function getProductsByCat($catId, $mysqli)
+{
+    $catId = intval($catId);
+
+    $request = 'SELECT * FROM products WHERE category_id='.$catId;
+
+    $rs = $mysqli->query($request);
+
+
+
+    return createSmartyRsArray($rs);
+}
