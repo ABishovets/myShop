@@ -2,6 +2,10 @@ body{
   padding:0;
 }
 
+.clearfix{
+  clear: both;
+}
+
 .hidden{display: none;}
 
 #header{
@@ -19,9 +23,25 @@ body{
 }
 
 #centerColumn{
-  width: 600px;
+  width: calc(100% - 300px);
   float: left;
-  padding-left: 90px;
+  margin-left: 90px;
+
+  .gird{
+
+    .product{
+      overflow: hidden;
+      padding: 10px;
+      margin: 10px;
+      width: 25%;
+      height: 300px;
+      background-color: #f0c040;
+      float:left;
+
+    }
+
+
+  }
 }
 
 #footer{

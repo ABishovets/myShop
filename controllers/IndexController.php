@@ -4,6 +4,7 @@
  */
 
 include_once '../models/CategoriesModel.php'; //includ models
+include_once '../models/ProductsModel.php'; //includ models
 
 function testAction()
     {
@@ -19,10 +20,13 @@ function testAction()
 
 function indexAction ($smarty, $mySql)
     {
-        $reCategories = getAllMainCatsWithChildren($mySql);
+        $rsCategories = getAllMainCatsWithChildren($mySql);
+        $rsProducts = getLastProducts(16,$mySql);
+
 
         $smarty -> assign('pageTitle', 'Главная страница');
-        $smarty -> assign('rsCategories', $reCategories);
+        $smarty -> assign('rsCategories', $rsCategories);
+        $smarty -> assign('rsProducts', $rsProducts);
 
         loadTemplate ($smarty, 'header');
         loadTemplate ($smarty, 'index');

@@ -3,6 +3,8 @@
     include_once '../config/db.php';// file where difined db access
     include_once '../library/maineFunctions.php';//functions library file
 
+
+
     // определяем с каким контроллером будем работать
     $controllerName = isset($_GET['controller']) ? ucfirst ($_GET['controller']) : 'Index';
 

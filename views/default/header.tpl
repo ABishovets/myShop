@@ -1,6 +1,6 @@
 <html>
-
 <head>
+    <meta charset="utf-8">
     <title>{$pageTitle}</title>
     <link rel="stylesheet" href="{$templateWebPath}/scss/main.css" type="text/css">
 </head>
@@ -18,5 +18,4 @@
 
 <div id="centerColumn">{*/centerColumn*}
 
-    center Column
 
