@@ -4,13 +4,13 @@
  * @param string $actionName     name of controller action
  */
 
-    function loadPage ($smarty, $controllerName, $actionName= 'index' )
+    function loadPage ($smarty, $controllerName, $actionName= 'index',$mySql )
     {
         include_once  PathPrefix.$controllerName.PathPostfix;
 
         $function = $actionName . 'Action';
 
-        $function($smarty);
+        $function($smarty,$mySql);
     }
 
 

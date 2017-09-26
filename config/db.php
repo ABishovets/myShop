@@ -1,25 +1,30 @@
 <?php
 
+require '../library/maineFunctions.php';
+
 /**
  * initial load for database
  */
 
-$dblocation = "127.0.0.1";
+$dblocation = "localhost";
 $dbname = "myshop";
-$dbuser = "root";
-$dbpassword = "";
+$dbuser = "admin";
+$dbpassword = "qaz";
 
-$db = mysql_connect($dblocation, $dbuser, $dbpassword);
+$mysqli = new mysqli($dblocation, $dbuser, $dbpassword, $dbname);
 
-if (!$db) {
-    echo 'error wih access to lockalhost';
-    exit();
+if ($mysqli->connect_errno) {
+    echo "Не удалось подключиться к MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
 }
 
-mysql_set_charset('utf-8');
+//echo $mysqli->host_info . "\n";
 
-if (! mysql_select_db($dbname, $db)) {
-    echo 'error to load DB';
-    exit();
-}
+/*
+$rez = $mysqli->query('
+   SELECT * FROM categories       
 
+');
+
+$rows = $rez->fetch_assoc();
+
+d($rows);*/

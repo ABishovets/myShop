@@ -17,13 +17,17 @@ function testAction()
  * @param $smarty -> templater
  */
 
-function indexAction ($smarty)
+function indexAction ($smarty, $mySql)
     {
-        $reCategories = getAllMainCatsWithChildren();
+        $reCategories = getAllMainCatsWithChildren($mySql);
 
         $smarty -> assign('pageTitle', 'Главная страница');
+        $smarty -> assign('rsCategories', $reCategories);
 
         loadTemplate ($smarty, 'header');
         loadTemplate ($smarty, 'index');
         loadTemplate ($smarty, 'footer');
+
+
+
     }
